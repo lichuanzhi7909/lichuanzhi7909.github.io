@@ -1,0 +1,8 @@
+excerpt_separator: ""
+pygments: true
+markdown: kramdown
+url: http://lichuanzhi7909.github.io
+title: ChuanzhiL
+tagline: A log of everyday life
+description: Talk is cheap. Show me the code
+paginate: 5
