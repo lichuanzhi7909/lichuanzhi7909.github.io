@@ -1,0 +1,30 @@
+---
+published: true
+title: 另外一种自定义控件的方法
+layout: post
+---
+随着手机配置的不断提高，各种各样酷炫的交互不断的被发明，苦逼的程序猿不断的被产品实现一些基本控件无法满足的需求，于是我们只能自己去实现这些控件来满足需求。以往我们自定义控件往往都是继承一个基本控件，然后重写onLayout、onMeasure、onDraw方法等方式来进行，之前我被迫实现一个类似于Android原生控件numberPick样式的控件，但是不同的是这个控件的内容需要是String，于是发现了一种有趣的自定义控件的方式。
+核心代码如下:
+
+	public void setValues(final String[] values) {
+        mValues = values;
+        if (isUnderHoneyComb()) {
+            try {
+                Method method = mClazz.getMethod("setRange", int.class, int.class, String[].class);
+                method.invoke(mInstance, 0, values.length - 1, values);
+            } catch (final Exception e) {
+                throw new RuntimeException(e);
+            }
+        } else {
+            try {
+                mClazz.getMethod("setMaxValue", int.class).invoke(mInstance, values.length - 1);
+                mClazz.getMethod("setMinValue", int.class).invoke(mInstance, 0);
+                mClazz.getMethod("setDisplayedValues", String[].class).invoke(mInstance, new Object[]{values});
+            } catch (final Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
+没错，就是利用反射的原理进行自定义，将原先的NumberPick里的int类型的values用String来替换，于是就巧妙的完成了我们的需求。当然了，除了上诉代码之外还有其他的细节的处理便不再一一赘述。
+	
