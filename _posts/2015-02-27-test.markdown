@@ -36,18 +36,7 @@ Usage
 
 On the same way that you working with ListAdapter, you must implement an interface to delegate the creation of the view, in this case AwesomeTextHandler.ViewSpanRenderer interface. The method getView is the responsible of this.
 
-```java
-    public class HashtagsSpanRenderer implements AwesomeTextHandler.ViewSpanRenderer {
-
-        @Override
-        public View getView(String text, Context context) {
-            LayoutInflater inflater = LayoutInflater.from(context);
-            TextView hashtagView = inflater.inflate(R.layout.hashtag);
-            hashtagView.setText(text);
-            return hashtagView;
-        }
-    }
-```
+{% gist 71b6fd6c79b47df62fce %}
 
 If you want to manage click events only must to implement AwesomeTextHandler.ViewSpanClickListener.
 
