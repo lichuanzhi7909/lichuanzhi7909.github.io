@@ -1,0 +1,12 @@
+---
+published: true
+title: 另外一种自定义控件的方法
+layout: post
+---
+我们知道从一个页面跳转到另外一个页面并且要携带数据回来的时候，会使用startActivityForResult和OnActivityResult的组合，在Activity与Activity之间的跳转没有任何问题。
+
+当我们引入Fragment了之后，只要注意在Fragment里面使用Fragment自己的startActivityForResult进行页面的跳转就不会发生OnActivityResult不被回调的情况，但是当有Fragment的嵌套的时候OnActivityResult回调可能会出现问题。
+
+今天碰到的问题就是在一个Fragment里面使用了ViewPageAdapter+Fragment的结构，然后在里层的Fragment进行页面跳转后OnActivityResult不回调，经查阅后，将startActivityForResult方法改成了getParentFragment().startActivityForResult，并在外层的Fragment里把方法传进去即可解决。
+
+会出现这样的情况的原因就是两个Fragment中间多了一层Adapter无法进行回调的传递，自己添加方法传递后就可以解决了。
