@@ -1,6 +1,6 @@
 ---
 published: true
-title: 另外一种自定义控件的方法
+title: OnActivityResult在多层嵌套的Fragment里无法回调的问题
 layout: post
 ---
 我们知道从一个页面跳转到另外一个页面并且要携带数据回来的时候，会使用startActivityForResult和OnActivityResult的组合，在Activity与Activity之间的跳转没有任何问题。
