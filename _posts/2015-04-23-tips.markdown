@@ -1,0 +1,39 @@
+---
+published: true
+title: 一些tips
+layout: post
+---
+1. LocalBroadcastManager解决BroadcastReceiver的安全问题
+2. BroadcastReceiver的permission
+3. 长图的加载：BitmapRegionDecoder tileView webView
+4. StrongReference、WeakReference和SoftReference
+5. Handler Looper MessageQueue
+6. IPC通信机制
+7. equals和hashCode
+8. equals和==
+9. 常用的设计模式
+10. Android里的定时和延时任务CountDownTimer Handler TimerTask AlarmManager 5.0新增的JobScheduler
+11. HttpURLConnection和HttpClient
+12. 属性获取的优先级xml>style>Theme中的默认Sytle>默认Style（通过obtainStyledAttributes的第四个参数指定）>在Theme中直接指定属性值
+13. 父控件的press status和子控件clickable的关系
+14. 各类变量的作用域 Binder static public protected private
+15. 类的加载过程 静态初始化-》静态实例化-》非静态初始化-》构造函数
+16. SparseArray 基于二分
+17. 分发dispatchTouchEvent、拦截onInterceptTouchEvent、消费onTouchEvent
+	View 不消费的情况
+	DOWN Activity.dispatchTouchEvent->ViewGroup.dispatchTouchEvent->View.dispatchTouchEvent->View.onTouchEvent->ViewGroup.onTouchEvent->Activity.onTouchEvent
+	UP、MOVE Activity.dispatchTouchEvent->Activity.onTouchEvent
+
+	View 消费的情况
+	DOWN Activity.dispatchTouchEvent->ViewGroup.dispatchTouchEvent->View.dispatchTouchEvent->View.onTouchEvent
+	UP、MOVE Activity.dispatchTouchEvent->ViewGroup.dispatchTouchEvent->View.dispatchTouchEvent->View.onTouchEvent
+
+18. View的绘制onMeasure、onLayout、onDraw
+	measure自上而下进行遍历、父视图根据MeasureSpec以及ChildView自身的参数确定长和宽 MeasureChildren->measureChild->getChildMeasureSpec->Measure->onMeasure->setMeasuredDimention
+	三中MeasureSpce：UNSPECIFIED，俯视图对子视图没有约束，ListView
+	EXACTLY 父视图为子视图指定一个确切的尺寸，而且无论子视图期望多大，它都必须在该指定大小的边界内 match_parent或具体的值
+	AT_MOST 父视图为子视图指定一个最大尺寸，子视图必须确保它自己的所有子视图可以适应在该尺寸范围内 wrap_content
+	layout自上而下进行遍历，根据每个View的mMeasureWidth和mMeasureHeight和计算得到的ChildLeft和ChildTop进行布局
+	dispatchDraw->draw->onDraw
+
+
