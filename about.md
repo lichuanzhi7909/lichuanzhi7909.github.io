@@ -2,6 +2,8 @@
 layout: default
 title: About Long Haul
 ---
+<h1 class="pageTitle">About ChuanzhiL</h1>
+<img src="{{ '/assets/img/touring.jpg' | prepend: site.baseurl }}" alt="">
 
 14年毕业于浙江工业大学，平时喜欢折腾，喜欢暴雪，热爱魔兽，从小记性不行，于是用这个博客记录下一路走来的人和事。
 
