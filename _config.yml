@@ -1,5 +1,5 @@
-title: Long Haul
-description: Long Form Jekyll theme built with SASS / COMPASS / SUSY
+title: ChuanzhiL
+description: Talk is cheap. Show me the code
 
 url: http://brianmaierjr.github.com/long-haul
 baseurl: ""
@@ -19,9 +19,9 @@ navigation:
    url: /contact
 
 social:
-   github: brianmaierjr
+   github: ChuanzhiL
    twitter: brianmaierjr
    facebook: brianmaierjr
-   email: brimaidesigns@gmail.com
+   email: lichuanzhi7909@gmail.com
 
 google_analytics: "UA-58263416-1"
