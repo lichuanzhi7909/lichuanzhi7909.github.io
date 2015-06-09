@@ -1,0 +1,18 @@
+---
+published: true
+title: Data Binding
+layout: post
+---
+2015年的Google I/O给开发者带来了很多福利，比如Design Support Library，新增支持 SVG 图片资源，Android Stuio的很多新功能以及Data Binding。其中Data Binding是实现MVVM架构中ViewModel的关键技术。说起MVVM我们不禁想起一些其他相似的架构，MVC、MVP以及MVVM，那么这些架构的的区别在哪里。
+
+总的来说，三者的区别主要在于如何粘合View以及Model，实现用户的交互以及变更的通知。
+###MVC：
+	Controller接收View的操作事件，根据事件的不同，进行不同的处理，比如Model里数据的变更或者View的跳转等，一个Controller可以对应多个View，Model数据变更不通过Controller而直接通知View，而通常View采用观察者模式监听Model的变化
+	
+###MVP：
+	Presenter，与Controller一样，接收View的命令，对Model进行操作，但是与Controller不同的是Presenter会反作用于View，Model的变更先通知Presenter，Presenter再去更新View，一个Presenter对应一个View
+	
+###MVVM：
+	ViewModel，这种模式的关键技术就是数据绑定（Data Binding），View的变化会直接影响ViewModel，ViewModel的变化也会直接体现在View上，这种模式需要框架代替开发者做一些工作，而目前Android里的Data Binding为单向绑定。
+	
+MVP和MVVM完全隔离了Model和View，但是在有些情况下，数据从Model到ViewModel或者Presenter的拷贝开销很大，可能也会结合MVC的方式，Model直接通知View进行变更。
