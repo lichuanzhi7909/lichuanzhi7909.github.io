@@ -12,6 +12,6 @@ title: Contact ChuanzhiL
                 <input type="email" name="_replyto" placeholder="Your email" />
                 <textarea name="message" rows="5" placeholder="Your message"></textarea>
                 <input type="text" name="_gotcha" style="display:none">
-                <button type="submit">Send</button>
+                <input type="submit" value="Send" class="button">
               </form>
 </div>
