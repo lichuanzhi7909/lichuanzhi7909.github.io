@@ -1,8 +1,27 @@
-excerpt_separator: ""
-pygments: true
-markdown: kramdown
-url: http://lichuanzhi7909.github.io
-title: ChuanzhiL
-tagline: Talk is cheap. Show me the code
-description: 你必须非常努力才能看起来毫不费力
+title: Long Haul
+description: Long Form Jekyll theme built with SASS / COMPASS / SUSY
+
+url: http://brianmaierjr.github.com/long-haul
+baseurl: ""
+paginate_path: "blog/page:num/"
+permalink: blog/:title/
+
+markdown: redcarpet
+highlighter: pygments
 paginate: 5
+
+navigation:
+ - title: Home
+   url: /index.html
+ - title: About
+   url: /about
+ - title: Contact
+   url: /contact
+
+social:
+   github: brianmaierjr
+   twitter: brianmaierjr
+   facebook: brianmaierjr
+   email: brimaidesigns@gmail.com
+
+google_analytics: "UA-58263416-1"
