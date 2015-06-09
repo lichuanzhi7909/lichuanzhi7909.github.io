@@ -17,14 +17,3 @@ ViewModel，这种模式的关键技术就是数据绑定（Data Binding），Vi
 	
 
 MVP和MVVM完全隔离了Model和View，但是在有些情况下，数据从Model到ViewModel或者Presenter的拷贝开销很大，可能也会结合MVC的方式，Model直接通知View进行变更。
-
-```python
-	import scrapy
-
-
-    class DmozItem(scrapy.Item):
-        # define the fields for your item here like:
-        title = scrapy.Field()
-        link = scrapy.Field()
-        desc = scrapy.Field()
-```
