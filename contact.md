@@ -8,7 +8,7 @@ title: Contact ChuanzhiL
   <div class="contactContent">
     <p>如果你有任何问题或想要我联系，欢迎发送邮件</p>
   </div>
-  <form action="http://formspree.io/lichuanzhi7909@gmail.com" method="POST">
+  <form action="http://formspree.io/your@mail.com" method="POST">
     <label for="name">Name</label>    
     <input type="text" id="name" name="name" class="full-width"><br>
     <label for="email">Email Address</label>
