@@ -9,8 +9,8 @@ layout: post
 2. sudo pip install Scrapy
 
 ###入门教程
-1. scrapy startproject tutorial
-2. 根据需要抽取的标签定义item，变量名需要和标签名一致，格式如下：
+* scrapy startproject tutorial
+* 根据需要抽取的标签定义item，变量名需要和标签名一致，格式如下：
 
 ```python
 	import scrapy
@@ -22,8 +22,8 @@ layout: post
         link = scrapy.Field()
         desc = scrapy.Field()
 ```
-3. 编写一个Spider，包含用于下载的初始url以及抓去网页信息的具体逻辑，最后生成item的方法。一个Spider必须继承scrapy.Spider类并且定义以下三个属性：name、start_urls、parse
-4. 从网页提取数据可以使用XPath和CSS表达式
+* 编写一个Spider，包含用于下载的初始url以及抓去网页信息的具体逻辑，最后生成item的方法。一个Spider必须继承scrapy.Spider类并且定义以下三个属性：name、start_urls、parse
+* 从网页提取数据可以使用XPath和CSS表达式
 
 
 
