@@ -24,6 +24,8 @@ layout: post
 ```
 * 编写一个Spider，包含用于下载的初始url以及抓去网页信息的具体逻辑，最后生成item的方法。一个Spider必须继承scrapy.Spider类并且定义以下三个属性：name、start_urls、parse
 * 从网页提取数据可以使用XPath和CSS表达式
+* Spider将会将爬取到的数据以 Item 对象返回
+* scrapy crawl dmoz -o items.json 该命令将采用 JSON 格式对爬取的数据进行序列化，生成 items.json 文件。
 
 
 
