@@ -33,7 +33,7 @@ layout: post
 
 
 ####使用lambdas配合RxJava
-* 在Android里使用retrolambda来实现lambdas，极大的简化了RxJava的使用:
+* 在Android里使用retrolambda来实现lambdas，极大的简化了RxJava的使用
 
 
     Observable.from(1, 2, 3, 4, 5)
@@ -43,7 +43,6 @@ layout: post
                 .subscribe((value) -> {
                     System.out.println("Value: " + value);
                 });
-
 
 
 
