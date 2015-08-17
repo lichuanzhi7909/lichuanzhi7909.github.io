@@ -1,0 +1,45 @@
+##从响应式编程到RxJava
+####响应式编程
+响应式编程就是与异步数据流交互的编程范式
+输入->... Action->输出
+使用一些巧妙的函数，比如结合创建、过滤任何一条数据流，总得来说就是将一条按照时间排序的events序列进行一系列的处理，最后放射成三种情况：Value、erroe或者completed。
+
+任何事件都可以用这种方式进行处理，但是一般来说我们推荐在异步并且有明显输入->... Action->的这种场景下使用，比如现在需要在网络上获取一组数据并且将数据进行排序的这种case。
+
+####RxJava
+* RxJava使用观察者模式来实现，Observables发出一系列事件，Subscribers来处理，事件可以经过多次的Action（map、filter、flatmap...），每发出一个事件都会调用Subscribers的onNext方法，最后调用用Subscriber.onNext()或者Subscriber.onError()结束
+* RxJava和Iterables有点类似，区别在于iterables是pull-based而observables是push-based
+![Iterables](https://cdn-images-2.medium.com/max/1684/1*6xrzAdP_wa6aR80UrNxiIw.png)
+* 常用的函数有Observable.from()、Observable.just() 、Observable.create()
+
+####使用RxJava替代AsyncTask
+#####AsyncTask的缺点
+
+* 在进行异步处理的时候没有一个良好的异常机制
+* 没有根据Activity/Fragment的生命周期做相应的处理
+* 外部环境发生改变（屏幕旋转等）时，没有相应的处理
+* 不利于测试
+
+#####RxJava的解决方式
+* Subscriber.onError()
+* AppObservable.bindFragment
+* AsyncSubject
+* 每次处理数据都会使用一个独立的方法，方便进行单元测试
+
+
+####使用lambdas配合RxJava
+* 在Android里使用retrolambda来实现lambdas，极大的简化了RxJava的使用:
+
+
+    Observable.from(1, 2, 3, 4, 5)
+                .filter((v) -> {
+                    return v < 4;
+                })
+                .subscribe((value) -> {
+                    System.out.println("Value: " + value);
+                });
+
+
+
+
+
