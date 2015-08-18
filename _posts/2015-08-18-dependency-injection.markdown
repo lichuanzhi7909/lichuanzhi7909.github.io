@@ -3,13 +3,13 @@ published: true
 title: 依赖注入
 layout: post
 ---
-######什么叫依赖注入
+###什么叫依赖注入
 如果在ClassA中有ClassB的实例，则称ClassA对ClassB有一个依赖，直接依赖会有很多问题，比如修改ClassB的生成方式则需要修改ClassA的代码，这个时候我们引入依赖注入的概念，在ClassA中写一个方法，传入ClassB，这样的方式叫做依赖注入
 
-######依赖注入的好处
+#####依赖注入的好处
 * 依赖的注入和配置独立于组件之外（ClassB的注入和生成独立于ClassA）
 
-######[注解](http://www.trinea.cn/android/java-annotation-android-open-source-analysis/)
+#####[注解](http://www.trinea.cn/android/java-annotation-android-open-source-analysis/)
 * Annotation 分类:
  	1. 标准 Annotation
  	2. 元 Annotation
@@ -20,7 +20,7 @@ layout: post
 	3. RUNTIME（运行时）
 * @Target 可以用来修饰哪些程序元素，如 TYPE, METHOD, CONSTRUCTOR, FIELD, PARAMETER 等，未标注则表示可修饰所有
 
-####常见的依赖注入库
+###常见的依赖注入库
 #####[AndroidAnnotation](http://androidannotations.org/)
 * 非常强大的依赖注入库，从UI到数据到网络请求都可以实现注入，极大的简化了开发过程，使用apt插件在编译时生成辅助类达到注入效果
 
