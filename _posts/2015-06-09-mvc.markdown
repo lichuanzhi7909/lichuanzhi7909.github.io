@@ -11,6 +11,7 @@ Controller接收View的操作事件，根据事件的不同，进行不同的处
 	
 ###MVP：
 Presenter，与Controller一样，接收View的命令，对Model进行操作，但是与Controller不同的是Presenter会反作用于View，Model的变更先通知Presenter，Presenter再去更新View，一个Presenter对应一个View
+使用Dagger在Activity里面注入一个Presenter，将Presenter和Activity进行绑定，Activity中的和Model相关的操作全部由Persenter代理，Activity只处理View相关的东西，这样的好处在于只对Activity进行Ui测试，对Presenter进行单元测试
 	
 ###MVVM：
 ViewModel，这种模式的关键技术就是数据绑定（Data Binding），View的变化会直接影响ViewModel，ViewModel的变化也会直接体现在View上，这种模式需要框架代替开发者做一些工作，而目前Android里的Data Binding为单向绑定。
